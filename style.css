@@ -45,18 +45,25 @@ main {
   min-height: 100vh;
 }
 
-.container {
+.heroimage {
   background-color: var(--White);
-  border-radius: 20px;
+  border-radius: 20px 20px 0 0;
   padding: 2rem 2rem;
   max-width: 700px;
-  margin: 0 1em;
+  margin-top: 5rem;
 }
 
 img {
   width: 100%;
   border-radius: 15px;
   margin-bottom: 20px;
+}
+
+.container {
+  background-color: var(--White);
+  padding: 0 2rem;
+  border-radius: 0 0 20px 20px;
+  max-width: 700px;
 }
 
 h1 {
@@ -77,7 +84,6 @@ h2 {
   background-color: var(--RoseWhite);
   border-radius: 10px;
   padding: 2rem 2rem;
-  max-height: 225px;
 }
 
 .box span {
@@ -113,7 +119,6 @@ ol.instructions {
   line-height: 2;
   padding-left: 1.5rem;
   padding-right: 1rem;
-
 }
 
 ol.instructions li {
@@ -123,4 +128,47 @@ ol.instructions li {
 ol.instructions li::marker {
   color: var(--DarkRasberry);
   font-weight: 600;
+}
+
+.table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  > * {
+    padding-block: 1rem;
+  }
+  > *:nth-of-type(odd) {
+    padding-inline-start: 2rem;
+  }
+  > *:nth-of-type(even) {
+    color: var(--Nutmeg);
+    font-weight: 700;
+  }
+  > :not(:nth-last-child(-n+2)) {
+    border-bottom: solid var(--LightGrey) 1px;
+  }
+}
+
+.attribution {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.attribution a {
+  text-decoration: none;
+  color: var(--DarkRasberry);
+}
+
+@media (max-width: 35rem) {
+  .heroimage {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+  }
+  img {
+    border-radius: 0;
+  }
+  .container {
+    border-radius: 0;
+  }
 }
